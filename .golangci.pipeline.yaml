@@ -23,16 +23,16 @@ linters:
     - typecheck
     - unused
 
-settings:
-  govet:
-    disable-all: true
-    enable:
-      - shadow
-  dupl:
-    threshold: 100
-  goconst:
-    min-len: 2
-    min-occurences: 2
+  settings:
+    govet:
+      disable-all: true
+      enable:
+        - shadow
+    dupl:
+      threshold: 100
+    goconst:
+      min-len: 2
+      min-occurences: 2
 
 
 
