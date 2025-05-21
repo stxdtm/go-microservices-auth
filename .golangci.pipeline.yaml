@@ -1,5 +1,3 @@
-# More info on config here: https://golangci-lint.run/usage/configuration/#config-file
-
 run:
   concurrency: 8
   timeout: 10m
@@ -11,20 +9,6 @@ output:
     text:
       print-issued-lines: true
       print-linter-name: true
-
-issues:
-  exclude-use-default: false
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - dupl
-    - path: \.pb\.go$
-    - path: \.pb\.gw\.go$
-  exclude:
-    - G104 # _ instead of err checks
-    - "exported func .* returns unexported type .*, which can be annoying to use"
-    - "should have a package comment"
-    - "don't use an underscore in package name"
 
 linters:
   disable-all: true
@@ -39,20 +23,16 @@ linters:
     - typecheck
     - unused
 
-linters-settings:
+settings:
   govet:
+    disable-all: true
     enable:
       - shadow
   dupl:
     threshold: 100
   goconst:
     min-len: 2
-    min-occurrences: 2
-  revive:
-    rules:
-      - name: package-comments
-        disabled: true
-      - name: exported
-        arguments:
-          - checkTypeParameters
-        disabled: false
+    min-occurences: 2
+
+
+
