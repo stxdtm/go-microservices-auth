@@ -7,10 +7,10 @@ run:
   build-tags: []
 
 output:
-  formats: 
-    - colored-line-number
-  print-issued-lines: true
-  print-linter-name: true
+  formats:
+    text:
+      print-issued-lines: true
+      print-linter-name: true
 
 issues:
   exclude-use-default: false
