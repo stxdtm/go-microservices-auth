@@ -4,8 +4,7 @@ run:
   concurrency: 8
   timeout: 10m
   tests: true
-  build-tags:
-    - []
+  build-tags: []
 
 output:
   format: colored-line-number
