@@ -4,11 +4,28 @@ run:
   tests: true
   build-tags: []
 
+issues:
+  exclude-files:
+    - \.pb\.go$
+    - \.pb\.gw\.go$
+  exclude-dirs:
+    - bin
+    - vendor
+    - var
+    - tmp
+    - .cache
+  exclude-use-default: false
+  exclude:
+    - G104
+    - exported func .* returns unexported type .*, which can be annoying to use
+    - should have a package comment
+    - don't use an underscore in package name    
+
 output:
   formats:
-    text:
-      print-issued-lines: true
-      print-linter-name: true
+    - format: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true
 
 linters:
   disable-all: true
@@ -23,16 +40,16 @@ linters:
     - typecheck
     - unused
 
-  settings:
-    govet:
-      disable-all: true
-      enable:
-        - shadow
-    dupl:
-      threshold: 100
-    goconst:
-      min-len: 2
-      min-occurences: 2
+linters-settings:
+  govet:
+    disable-all: true
+    enable:
+      - shadow
+  dupl:
+    threshold: 100
+  goconst:
+    min-len: 2
+    min-occurrences: 2
 
 
 
