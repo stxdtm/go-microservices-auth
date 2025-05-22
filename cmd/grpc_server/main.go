@@ -21,7 +21,7 @@ type server struct {
 
 // переопределяем метод Get, чтобы вместо заглушки использовать нужный функционал
 func (s *server) Get(ctx context.Context, req *gp.GetRequest) (*gp.GetResponse, error) {
-	log.Printf("Note id: %d", req.GetId())
+	log.Printf("User id: %d", req.GetId())
 
 	return &gp.GetResponse{
 		User: &gp.User{
